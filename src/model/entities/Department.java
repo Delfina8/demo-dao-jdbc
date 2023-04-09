@@ -1,6 +1,10 @@
 package model.entities;
 
-public class Department {
+import java.io.Serializable;
+
+public class Department implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
 	private String name;
@@ -35,6 +39,8 @@ public class Department {
 	 * (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
+	
+	//nesse caso gerei apenas para o ID
 
 	@Override
 	public int hashCode() {
@@ -60,6 +66,19 @@ public class Department {
 			return false;
 		return true;
 	}
+	
+	/*
+	 * toString para facilitar a impressão dos valores do objeto quando estivermos a testar
+	 * Gerei para os dois atributos
+	 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Department [id=" + id + ", name = " + name + "]";
+	}
+	
+
 	
 	
 
