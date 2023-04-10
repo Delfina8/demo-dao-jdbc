@@ -2,6 +2,10 @@ package model.entities;
 
 import java.io.Serializable;
 
+/*
+ * implements Serializable: Serve para os objetos serem transformados em sequência de Bytes
+ */
+
 public class Department implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
