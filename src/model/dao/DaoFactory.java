@@ -1,5 +1,6 @@
 package model.dao;
 
+import db.DB;
 import model.dao.impl.SellerDaoJDBC;
 
 /*
@@ -11,7 +12,7 @@ public class DaoFactory {
 	 * vai retornar um tipo da interface
 	 */
 	public static SellerDao createSellerDao() {
-		return new SellerDaoJDBC();
+		return new SellerDaoJDBC(DB.getConnection());
 	}
 
 }
