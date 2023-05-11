@@ -82,10 +82,10 @@ private Connection conn;
 		PreparedStatement st = null;
 		try {
 			st = conn.prepareStatement(
-				"INSERT INTO department " +
-				"(Name) " +
-				"VALUES " +
-				"(?)", 
+				"INSERT INTO department "
+				+ "(Name) "
+				+ "VALUES "
+				+ "(?)", 
 				Statement.RETURN_GENERATED_KEYS);
 
 			st.setString(1, obj.getName());
