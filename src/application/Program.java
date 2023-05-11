@@ -3,6 +3,7 @@ package application;
 import java.util.List;
 
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -17,6 +18,7 @@ public class Program {
 		// Abaixo temos uma forma de fazer uma injeção de dependência sem deixar a
 		// implementação explícita
 		SellerDao sellerDao = DaoFactory.createSellerDao();
+		DepartmentDao departmentDao = DaoFactory.createDepartmentDao();
 
 		System.out.println("=== TEST 1: seller findById =====");
 		Seller seller = sellerDao.findById(3);
@@ -28,6 +30,14 @@ public class Program {
 		for (Seller obj : list) {
 			System.out.println(obj);
 		}
+		
+		System.out.println("\n=== TEST 3: seller findAll =====");
+		list = sellerDao.findAll();
+		for (Seller obj : list) {
+			System.out.println(obj);
+		}
+		
+		
 
 	}
 
